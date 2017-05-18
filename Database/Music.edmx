@@ -1,0 +1,937 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ShauniModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.3.5" ProviderManifestToken="3.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ShauniModelStoreContainer">
+    <EntitySet Name="Album" EntityType="ShauniModel.Store.Album" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Artist" EntityType="ShauniModel.Store.Artist" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Genre" EntityType="ShauniModel.Store.Genre" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Song" EntityType="ShauniModel.Store.Song" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AudioStatistic" EntityType="ShauniModel.Store.AudioStatistic" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TimeLine" EntityType="ShauniModel.Store.TimeLine" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Format" EntityType="ShauniModel.Store.Format" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Picture" EntityType="ShauniModel.Store.Picture" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Covers" EntityType="ShauniModel.Store.Covers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Lyrics" EntityType="ShauniModel.Store.Lyrics" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LastFm" EntityType="ShauniModel.Store.LastFm" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tag" EntityType="ShauniModel.Store.Tag" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TheEchoNest" EntityType="ShauniModel.Store.TheEchoNest" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_AlbumGenre" Association="ShauniModel.Store.FK_AlbumGenre">
+      <End Role="Genre" EntitySet="Genre" />
+      <End Role="Album" EntitySet="Album" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AlbumSong" Association="ShauniModel.Store.FK_AlbumSong">
+      <End Role="Album" EntitySet="Album" />
+      <End Role="Song" EntitySet="Song" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ArtistSong" Association="ShauniModel.Store.FK_ArtistSong">
+      <End Role="Artist" EntitySet="Artist" />
+      <End Role="Song" EntitySet="Song" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SongGenre" Association="ShauniModel.Store.FK_SongGenre">
+      <End Role="Genre" EntitySet="Genre" />
+      <End Role="Song" EntitySet="Song" />
+    </AssociationSet>
+    <AssociationSet Name="AudioStatisticArtist" Association="ShauniModel.Store.AudioStatisticArtist">
+      <End Role="AudioStatistic" EntitySet="AudioStatistic" />
+      <End Role="Artist" EntitySet="Artist" />
+    </AssociationSet>
+    <AssociationSet Name="TimeLineAudioStatistic" Association="ShauniModel.Store.TimeLineAudioStatistic">
+      <End Role="TimeLine" EntitySet="TimeLine" />
+      <End Role="AudioStatistic" EntitySet="AudioStatistic" />
+    </AssociationSet>
+    <AssociationSet Name="FormatSong" Association="ShauniModel.Store.FormatSong">
+      <End Role="Format" EntitySet="Format" />
+      <End Role="Song" EntitySet="Song" />
+    </AssociationSet>
+    <AssociationSet Name="AlbumCover" Association="ShauniModel.Store.AlbumCover">
+      <End Role="Album" EntitySet="Album" />
+      <End Role="Cover" EntitySet="Covers" />
+    </AssociationSet>
+    <AssociationSet Name="SongLyric" Association="ShauniModel.Store.SongLyric">
+      <End Role="Song" EntitySet="Song" />
+      <End Role="Lyric" EntitySet="Lyrics" />
+    </AssociationSet>
+    <AssociationSet Name="TagLastFm" Association="ShauniModel.Store.TagLastFm">
+      <End Role="Tag" EntitySet="Tag" />
+      <End Role="LastFm" EntitySet="LastFm" />
+    </AssociationSet>
+    <AssociationSet Name="LastFmSong" Association="ShauniModel.Store.LastFmSong">
+      <End Role="LastFm" EntitySet="LastFm" />
+      <End Role="Song" EntitySet="Song" />
+    </AssociationSet>
+    <AssociationSet Name="SongEchoNest" Association="ShauniModel.Store.SongEchoNest">
+      <End Role="Song" EntitySet="Song" />
+      <End Role="EchoNest" EntitySet="TheEchoNest" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Album">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="4000" />
+    <Property Name="GenreID" Type="int" Nullable="false" />
+    <Property Name="Year" Type="nvarchar" Nullable="true" />
+    <Property Name="TrackNumber" Type="smallint" Nullable="true" />
+    <Property Name="PublicationDate" Type="datetime" Nullable="true" />
+    <Property Name="Notes" Type="nvarchar" Nullable="true" MaxLength="Max" />
+  </EntityType>
+  <EntityType Name="Artist">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="4000" />
+    <Property Name="Image" Type="varbinary" Nullable="true" MaxLength="Max" />
+    <Property Name="Biography" Type="nvarchar" Nullable="true" MaxLength="Max" />
+  </EntityType>
+  <EntityType Name="Genre">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="4000" />
+  </EntityType>
+  <EntityType Name="Song">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="true" MaxLength="4000" />
+    <Property Name="Filename" Type="nvarchar" Nullable="true" MaxLength="4000" />
+    <Property Name="Counter" Type="int" Nullable="false" />
+    <Property Name="Duration" Type="int" Nullable="true" />
+    <Property Name="Stars" Type="tinyint" Nullable="true" DefaultValue="0" />
+    <Property Name="Author" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="GenreID" Type="int" Nullable="false" />
+    <Property Name="ArtistID" Type="int" Nullable="false" />
+    <Property Name="AlbumID" Type="int" Nullable="false" />
+    <Property Name="Favourite" Type="bit" Nullable="true" DefaultValue="false" />
+  </EntityType>
+  <EntityType Name="AudioStatistic">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Counter" Type="int" Nullable="false" />
+    <Property Name="ArtistID" Type="int" Nullable="false" />
+    <Property Name="TimeLineID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TimeLine">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Format">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Size" Type="int" Nullable="false" DefaultValue="0" />
+    <Property Name="SamplingRate" Type="int" Nullable="false" DefaultValue="0" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" />
+    <Property Name="BitRate" Type="int" Nullable="false" DefaultValue="0" />
+    <Property Name="Song_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Picture">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Counter" Type="int" Nullable="false" />
+    <Property Name="Favourite" Type="bit" Nullable="true" DefaultValue="false" />
+    <Property Name="Stars" Type="tinyint" Nullable="true" DefaultValue="0" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="Max" />
+    <Property Name="Author" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Filename" Type="nvarchar" Nullable="false" MaxLength="Max" />
+  </EntityType>
+  <EntityType Name="Covers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Front" Type="varbinary" Nullable="true" MaxLength="Max" />
+    <Property Name="Back" Type="varbinary" Nullable="true" MaxLength="Max" />
+    <Property Name="AlbumID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Lyrics">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Text" Type="nvarchar" Nullable="false" MaxLength="Max" />
+    <Property Name="Song_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LastFm">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Playcount" Type="int" Nullable="true" />
+    <Property Name="Listeners" Type="int" Nullable="true" />
+    <Property Name="Song_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tag">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LastFmID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TheEchoNest">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Tempo" Type="float" Nullable="true" />
+    <Property Name="Energy" Type="float" Nullable="true" />
+    <Property Name="Danceability" Type="float" Nullable="true" />
+    <Property Name="Key" Type="int" Nullable="false" />
+    <Property Name="Mode" Type="int" Nullable="false" />
+    <Property Name="Loudness" Type="float" Nullable="true" />
+    <Property Name="Song_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_AlbumGenre">
+    <End Role="Genre" Type="ShauniModel.Store.Genre" Multiplicity="1" />
+    <End Role="Album" Type="ShauniModel.Store.Album" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Genre">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Album">
+        <PropertyRef Name="GenreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AlbumSong">
+    <End Role="Album" Type="ShauniModel.Store.Album" Multiplicity="1" />
+    <End Role="Song" Type="ShauniModel.Store.Song" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Album">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Song">
+        <PropertyRef Name="AlbumID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ArtistSong">
+    <End Role="Artist" Type="ShauniModel.Store.Artist" Multiplicity="1" />
+    <End Role="Song" Type="ShauniModel.Store.Song" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Artist">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Song">
+        <PropertyRef Name="ArtistID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SongGenre">
+    <End Role="Genre" Type="ShauniModel.Store.Genre" Multiplicity="1" />
+    <End Role="Song" Type="ShauniModel.Store.Song" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Genre">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Song">
+        <PropertyRef Name="GenreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AudioStatisticArtist">
+    <End Role="AudioStatistic" Type="ShauniModel.Store.AudioStatistic" Multiplicity="*" />
+    <End Role="Artist" Type="ShauniModel.Store.Artist" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Artist">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AudioStatistic">
+        <PropertyRef Name="ArtistID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TimeLineAudioStatistic">
+    <End Role="TimeLine" Type="ShauniModel.Store.TimeLine" Multiplicity="1" />
+    <End Role="AudioStatistic" Type="ShauniModel.Store.AudioStatistic" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TimeLine">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AudioStatistic">
+        <PropertyRef Name="TimeLineID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FormatSong">
+    <End Role="Format" Type="ShauniModel.Store.Format" Multiplicity="*" />
+    <End Role="Song" Type="ShauniModel.Store.Song" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Song">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Format">
+        <PropertyRef Name="Song_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AlbumCover">
+    <End Role="Album" Type="ShauniModel.Store.Album" Multiplicity="1" />
+    <End Role="Cover" Type="ShauniModel.Store.Covers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Album">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Cover">
+        <PropertyRef Name="AlbumID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SongLyric">
+    <End Role="Song" Type="ShauniModel.Store.Song" Multiplicity="1" />
+    <End Role="Lyric" Type="ShauniModel.Store.Lyrics" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Song">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Lyric">
+        <PropertyRef Name="Song_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TagLastFm">
+    <End Role="Tag" Type="ShauniModel.Store.Tag" Multiplicity="*" />
+    <End Role="LastFm" Type="ShauniModel.Store.LastFm" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="LastFm">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Tag">
+        <PropertyRef Name="LastFmID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LastFmSong">
+    <End Role="LastFm" Type="ShauniModel.Store.LastFm" Multiplicity="*" />
+    <End Role="Song" Type="ShauniModel.Store.Song" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Song">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="LastFm">
+        <PropertyRef Name="Song_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="SongEchoNest">
+    <End Role="Song" Type="ShauniModel.Store.Song" Multiplicity="1" />
+    <End Role="EchoNest" Type="ShauniModel.Store.TheEchoNest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Song">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EchoNest">
+        <PropertyRef Name="Song_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ShauniModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="ShauniDatabase" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Album" EntityType="ShauniModel.Album" />
+          <EntitySet Name="Artist" EntityType="ShauniModel.Artist" />
+          <EntitySet Name="Genre" EntityType="ShauniModel.Genre" />
+          <EntitySet Name="Song" EntityType="ShauniModel.Song" />
+          <AssociationSet Name="FK_AlbumGenre" Association="ShauniModel.FK_AlbumGenre">
+            <End Role="Genre" EntitySet="Genre" />
+            <End Role="Album" EntitySet="Album" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AlbumSong" Association="ShauniModel.FK_AlbumSong">
+            <End Role="Album" EntitySet="Album" />
+            <End Role="Song" EntitySet="Song" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ArtistSong" Association="ShauniModel.FK_ArtistSong">
+            <End Role="Artist" EntitySet="Artist" />
+            <End Role="Song" EntitySet="Song" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SongGenre" Association="ShauniModel.FK_SongGenre">
+            <End Role="Genre" EntitySet="Genre" />
+            <End Role="Song" EntitySet="Song" />
+          </AssociationSet>
+          <EntitySet Name="AudioStatistic" EntityType="ShauniModel.AudioStatistic" />
+          <AssociationSet Name="AudioStatisticArtist" Association="ShauniModel.AudioStatisticArtist">
+            <End Role="AudioStatistic" EntitySet="AudioStatistic" />
+            <End Role="Artist" EntitySet="Artist" />
+          </AssociationSet>
+          <EntitySet Name="TimeLine" EntityType="ShauniModel.TimeLine" />
+          <AssociationSet Name="TimeLineAudioStatistic" Association="ShauniModel.TimeLineAudioStatistic">
+            <End Role="TimeLine" EntitySet="TimeLine" />
+            <End Role="AudioStatistic" EntitySet="AudioStatistic" />
+          </AssociationSet>
+          <EntitySet Name="Format" EntityType="ShauniModel.Format" />
+          <AssociationSet Name="FormatSong" Association="ShauniModel.FormatSong">
+            <End Role="Format" EntitySet="Format" />
+            <End Role="Song" EntitySet="Song" />
+          </AssociationSet>
+          <EntitySet Name="Picture" EntityType="ShauniModel.Picture" />
+          <EntitySet Name="Covers" EntityType="ShauniModel.Cover" />
+          <AssociationSet Name="AlbumCover" Association="ShauniModel.AlbumCover">
+            <End Role="Album" EntitySet="Album" />
+            <End Role="Cover" EntitySet="Covers" />
+          </AssociationSet>
+          <EntitySet Name="Lyrics" EntityType="ShauniModel.Lyric" />
+          <AssociationSet Name="SongLyric" Association="ShauniModel.SongLyric">
+            <End Role="Song" EntitySet="Song" />
+            <End Role="Lyric" EntitySet="Lyrics" />
+          </AssociationSet>
+          <EntitySet Name="LastFm" EntityType="ShauniModel.LastFm" />
+          <EntitySet Name="Tag" EntityType="ShauniModel.Tag" />
+          <AssociationSet Name="TagLastFm" Association="ShauniModel.TagLastFm">
+            <End Role="Tag" EntitySet="Tag" />
+            <End Role="LastFm" EntitySet="LastFm" />
+          </AssociationSet>
+          <AssociationSet Name="LastFmSong" Association="ShauniModel.LastFmSong">
+            <End Role="LastFm" EntitySet="LastFm" />
+            <End Role="Song" EntitySet="Song" />
+          </AssociationSet>
+          <EntitySet Name="TheEchoNest" EntityType="ShauniModel.TheEchoNest" />
+          <AssociationSet Name="SongEchoNest" Association="ShauniModel.SongEchoNest">
+            <End Role="Song" EntitySet="Song" />
+            <End Role="EchoNest" EntitySet="TheEchoNest" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Album">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="4000" Unicode="true" FixedLength="false" />
+          <Property Name="GenreID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Genre" Relationship="ShauniModel.FK_AlbumGenre" FromRole="Album" ToRole="Genre" />
+          <NavigationProperty Name="Song" Relationship="ShauniModel.FK_AlbumSong" FromRole="Album" ToRole="Song" />
+          <Property Type="String" Name="Year" Nullable="true" />
+          <Property Type="Int16" Name="TrackNumber" Nullable="true" />
+          <Property Type="DateTime" Name="PublicationDate" />
+          <Property Type="String" Name="Notes" Unicode="true" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Covers" Relationship="ShauniModel.AlbumCover" FromRole="Album" ToRole="Cover" />
+        </EntityType>
+        <EntityType Name="Artist">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="4000" Unicode="true" FixedLength="false" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Biography" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Song" Relationship="ShauniModel.FK_ArtistSong" FromRole="Artist" ToRole="Song" />
+          <NavigationProperty Name="AudioStatistic" Relationship="ShauniModel.AudioStatisticArtist" FromRole="Artist" ToRole="AudioStatistic" />
+        </EntityType>
+        <EntityType Name="Genre">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="4000" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Album" Relationship="ShauniModel.FK_AlbumGenre" FromRole="Genre" ToRole="Album" />
+          <NavigationProperty Name="Song" Relationship="ShauniModel.FK_SongGenre" FromRole="Genre" ToRole="Song" />
+        </EntityType>
+        <EntityType Name="Song">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+          <Property Name="Filename" Type="String" Nullable="true" MaxLength="4000" Unicode="true" FixedLength="false" />
+          <Property Name="Counter" Type="Int32" Nullable="false" />
+          <Property Name="Duration" Type="Int32" />
+          <Property Name="Stars" Type="Byte" DefaultValue="0" />
+          <Property Name="Author" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="GenreID" Type="Int32" Nullable="false" />
+          <Property Name="ArtistID" Type="Int32" Nullable="false" />
+          <Property Name="AlbumID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Album" Relationship="ShauniModel.FK_AlbumSong" FromRole="Song" ToRole="Album" />
+          <NavigationProperty Name="Artist" Relationship="ShauniModel.FK_ArtistSong" FromRole="Song" ToRole="Artist" />
+          <NavigationProperty Name="Genre" Relationship="ShauniModel.FK_SongGenre" FromRole="Song" ToRole="Genre" />
+          <Property Type="Boolean" Name="Favourite" Nullable="true" DefaultValue="False" />
+          <NavigationProperty Name="Format" Relationship="ShauniModel.FormatSong" FromRole="Song" ToRole="Format" />
+          <NavigationProperty Name="Lyric" Relationship="ShauniModel.SongLyric" FromRole="Song" ToRole="Lyric" />
+          <NavigationProperty Name="LastFm" Relationship="ShauniModel.LastFmSong" FromRole="Song" ToRole="LastFm" />
+          <NavigationProperty Name="EchoNest" Relationship="ShauniModel.SongEchoNest" FromRole="Song" ToRole="EchoNest" />
+        </EntityType>
+        <Association Name="FK_AlbumGenre">
+          <End Role="Genre" Type="ShauniModel.Genre" Multiplicity="1" />
+          <End Role="Album" Type="ShauniModel.Album" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genre">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Album">
+              <PropertyRef Name="GenreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AlbumSong">
+          <End Role="Album" Type="ShauniModel.Album" Multiplicity="1" />
+          <End Role="Song" Type="ShauniModel.Song" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Album">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Song">
+              <PropertyRef Name="AlbumID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ArtistSong">
+          <End Role="Artist" Type="ShauniModel.Artist" Multiplicity="1" />
+          <End Role="Song" Type="ShauniModel.Song" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Artist">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Song">
+              <PropertyRef Name="ArtistID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SongGenre">
+          <End Role="Genre" Type="ShauniModel.Genre" Multiplicity="1" />
+          <End Role="Song" Type="ShauniModel.Song" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genre">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Song">
+              <PropertyRef Name="GenreID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="AudioStatistic">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Type="Int32" Name="Counter" Nullable="false" />
+          <NavigationProperty Name="Artist" Relationship="ShauniModel.AudioStatisticArtist" FromRole="AudioStatistic" ToRole="Artist" />
+          <Property Type="Int32" Name="ArtistID" Nullable="false" />
+          <NavigationProperty Name="TimeLine" Relationship="ShauniModel.TimeLineAudioStatistic" FromRole="AudioStatistic" ToRole="TimeLine" />
+          <Property Type="Int32" Name="TimeLineID" Nullable="false" />
+        </EntityType>
+        <Association Name="AudioStatisticArtist">
+          <End Type="ShauniModel.AudioStatistic" Role="AudioStatistic" Multiplicity="*" />
+          <End Type="ShauniModel.Artist" Role="Artist" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Artist">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AudioStatistic">
+              <PropertyRef Name="ArtistID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TimeLine">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Type="DateTime" Name="Date" Nullable="false" />
+          <NavigationProperty Name="AudioStatistic" Relationship="ShauniModel.TimeLineAudioStatistic" FromRole="TimeLine" ToRole="AudioStatistic" />
+        </EntityType>
+        <Association Name="TimeLineAudioStatistic">
+          <End Type="ShauniModel.TimeLine" Role="TimeLine" Multiplicity="1" />
+          <End Type="ShauniModel.AudioStatistic" Role="AudioStatistic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TimeLine">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AudioStatistic">
+              <PropertyRef Name="TimeLineID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Format">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Type="Int32" Name="Size" Nullable="false" DefaultValue="0" />
+          <Property Type="Int32" Name="SamplingRate" Nullable="false" DefaultValue="0" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="Int32" Name="BitRate" Nullable="false" DefaultValue="0" />
+          <NavigationProperty Name="Song" Relationship="ShauniModel.FormatSong" FromRole="Format" ToRole="Song" />
+        </EntityType>
+        <Association Name="FormatSong">
+          <End Type="ShauniModel.Format" Role="Format" Multiplicity="0..1" />
+          <End Type="ShauniModel.Song" Role="Song" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Picture">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Type="Int32" Name="Counter" Nullable="false" />
+          <Property Type="Boolean" Name="Favourite" Nullable="true" DefaultValue="False" />
+          <Property Type="Byte" Name="Stars" DefaultValue="0" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" Unicode="true" />
+          <Property Type="String" Name="Author" Nullable="true" MaxLength="50" Unicode="true" />
+          <Property Type="String" Name="Filename" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Cover">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Binary" Name="Front" MaxLength="Max" FixedLength="false" />
+          <Property Type="Binary" Name="Back" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Album" Relationship="ShauniModel.AlbumCover" FromRole="Cover" ToRole="Album" />
+          <Property Type="Int32" Name="AlbumID" Nullable="false" />
+        </EntityType>
+        <Association Name="AlbumCover">
+          <End Type="ShauniModel.Album" Role="Album" Multiplicity="1" />
+          <End Type="ShauniModel.Cover" Role="Cover" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Album">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cover">
+              <PropertyRef Name="AlbumID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Lyric">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Text" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Song" Relationship="ShauniModel.SongLyric" FromRole="Lyric" ToRole="Song" />
+        </EntityType>
+        <Association Name="SongLyric">
+          <End Type="ShauniModel.Song" Role="Song" Multiplicity="1" />
+          <End Type="ShauniModel.Lyric" Role="Lyric" Multiplicity="0..1" />
+        </Association>
+        <EntityType Name="LastFm">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Type="Int32" Name="Playcount" Nullable="true" />
+          <Property Type="Int32" Name="Listeners" Nullable="true" />
+          <NavigationProperty Name="Tag" Relationship="ShauniModel.TagLastFm" FromRole="LastFm" ToRole="Tag" />
+          <NavigationProperty Name="Song" Relationship="ShauniModel.LastFmSong" FromRole="LastFm" ToRole="Song" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="LastFm" Relationship="ShauniModel.TagLastFm" FromRole="Tag" ToRole="LastFm" />
+          <Property Type="Int32" Name="LastFmID" Nullable="false" />
+        </EntityType>
+        <Association Name="TagLastFm">
+          <End Type="ShauniModel.Tag" Role="Tag" Multiplicity="*" />
+          <End Type="ShauniModel.LastFm" Role="LastFm" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="LastFm">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tag">
+              <PropertyRef Name="LastFmID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LastFmSong">
+          <End Type="ShauniModel.LastFm" Role="LastFm" Multiplicity="0..1" />
+          <End Type="ShauniModel.Song" Role="Song" Multiplicity="1" />
+        </Association>
+        <EntityType Name="TheEchoNest">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Type="Double" Name="Tempo" Nullable="true" />
+          <Property Type="Double" Name="Energy" Nullable="true" />
+          <Property Type="Double" Name="Danceability" Nullable="true" />
+          <Property Type="Int32" Name="Key" Nullable="false" />
+          <Property Type="Int32" Name="Mode" Nullable="false" />
+          <Property Type="Double" Name="Loudness" Nullable="true" />
+          <NavigationProperty Name="Song" Relationship="ShauniModel.SongEchoNest" FromRole="EchoNest" ToRole="Song" />
+        </EntityType>
+        <Association Name="SongEchoNest">
+          <End Type="ShauniModel.Song" Role="Song" Multiplicity="1" />
+          <End Type="ShauniModel.TheEchoNest" Role="EchoNest" Multiplicity="0..1" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ShauniModelStoreContainer" CdmEntityContainer="ShauniDatabase">
+    <EntitySetMapping Name="Album">
+      <EntityTypeMapping TypeName="IsTypeOf(ShauniModel.Album)">
+        <MappingFragment StoreEntitySet="Album">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="GenreID" ColumnName="GenreID" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="TrackNumber" ColumnName="TrackNumber" />
+          <ScalarProperty Name="PublicationDate" ColumnName="PublicationDate" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Artist">
+      <EntityTypeMapping TypeName="IsTypeOf(ShauniModel.Artist)">
+        <MappingFragment StoreEntitySet="Artist">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Biography" ColumnName="Biography" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genre">
+      <EntityTypeMapping TypeName="IsTypeOf(ShauniModel.Genre)">
+        <MappingFragment StoreEntitySet="Genre">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Song">
+      <EntityTypeMapping TypeName="IsTypeOf(ShauniModel.Song)">
+        <MappingFragment StoreEntitySet="Song">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Filename" ColumnName="Filename" />
+          <ScalarProperty Name="Counter" ColumnName="Counter" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="Stars" ColumnName="Stars" />
+          <ScalarProperty Name="Author" ColumnName="Author" />
+          <ScalarProperty Name="GenreID" ColumnName="GenreID" />
+          <ScalarProperty Name="ArtistID" ColumnName="ArtistID" />
+          <ScalarProperty Name="AlbumID" ColumnName="AlbumID" />
+          <ScalarProperty Name="Favourite" ColumnName="Favourite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AudioStatistic">
+      <EntityTypeMapping TypeName="IsTypeOf(ShauniModel.AudioStatistic)">
+        <MappingFragment StoreEntitySet="AudioStatistic">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Counter" ColumnName="Counter" />
+          <ScalarProperty Name="ArtistID" ColumnName="ArtistID" />
+          <ScalarProperty Name="TimeLineID" ColumnName="TimeLineID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TimeLine">
+      <EntityTypeMapping TypeName="IsTypeOf(ShauniModel.TimeLine)">
+        <MappingFragment StoreEntitySet="TimeLine">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Format">
+      <EntityTypeMapping TypeName="IsTypeOf(ShauniModel.Format)">
+        <MappingFragment StoreEntitySet="Format">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="SamplingRate" ColumnName="SamplingRate" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="BitRate" ColumnName="BitRate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Picture">
+      <EntityTypeMapping TypeName="IsTypeOf(ShauniModel.Picture)">
+        <MappingFragment StoreEntitySet="Picture">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Counter" ColumnName="Counter" />
+          <ScalarProperty Name="Favourite" ColumnName="Favourite" />
+          <ScalarProperty Name="Stars" ColumnName="Stars" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Author" ColumnName="Author" />
+          <ScalarProperty Name="Filename" ColumnName="Filename" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Covers">
+      <EntityTypeMapping TypeName="IsTypeOf(ShauniModel.Cover)">
+        <MappingFragment StoreEntitySet="Covers">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Front" ColumnName="Front" />
+          <ScalarProperty Name="Back" ColumnName="Back" />
+          <ScalarProperty Name="AlbumID" ColumnName="AlbumID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lyrics">
+      <EntityTypeMapping TypeName="IsTypeOf(ShauniModel.Lyric)">
+        <MappingFragment StoreEntitySet="Lyrics">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LastFm">
+      <EntityTypeMapping TypeName="IsTypeOf(ShauniModel.LastFm)">
+        <MappingFragment StoreEntitySet="LastFm">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Playcount" ColumnName="Playcount" />
+          <ScalarProperty Name="Listeners" ColumnName="Listeners" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tag">
+      <EntityTypeMapping TypeName="IsTypeOf(ShauniModel.Tag)">
+        <MappingFragment StoreEntitySet="Tag">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LastFmID" ColumnName="LastFmID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TheEchoNest">
+      <EntityTypeMapping TypeName="IsTypeOf(ShauniModel.TheEchoNest)">
+        <MappingFragment StoreEntitySet="TheEchoNest">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Tempo" ColumnName="Tempo" />
+          <ScalarProperty Name="Energy" ColumnName="Energy" />
+          <ScalarProperty Name="Danceability" ColumnName="Danceability" />
+          <ScalarProperty Name="Key" ColumnName="Key" />
+          <ScalarProperty Name="Mode" ColumnName="Mode" />
+          <ScalarProperty Name="Loudness" ColumnName="Loudness" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FormatSong" TypeName="ShauniModel.FormatSong" StoreEntitySet="Format">
+      <EndProperty Name="Song">
+        <ScalarProperty Name="ID" ColumnName="Song_ID" />
+      </EndProperty>
+      <EndProperty Name="Format">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SongLyric" TypeName="ShauniModel.SongLyric" StoreEntitySet="Lyrics">
+      <EndProperty Name="Song">
+        <ScalarProperty Name="ID" ColumnName="Song_ID" />
+      </EndProperty>
+      <EndProperty Name="Lyric">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="LastFmSong" TypeName="ShauniModel.LastFmSong" StoreEntitySet="LastFm">
+      <EndProperty Name="Song">
+        <ScalarProperty Name="ID" ColumnName="Song_ID" />
+      </EndProperty>
+      <EndProperty Name="LastFm">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SongEchoNest" TypeName="ShauniModel.SongEchoNest" StoreEntitySet="TheEchoNest">
+      <EndProperty Name="Song">
+        <ScalarProperty Name="ID" ColumnName="Song_ID" />
+      </EndProperty>
+      <EndProperty Name="EchoNest">
+        <ScalarProperty Name="ID" ColumnName="ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Music" ZoomLevel="77" ShowGrid="false" SnapToGrid="true">
+        <EntityTypeShape EntityType="ShauniModel.Album" Width="1.5" PointX="3" PointY="0.625" Height="2.7494921875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShauniModel.Artist" Width="1.5" PointX="10.25" PointY="2.5" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShauniModel.Genre" Width="1.5" PointX="0.5" PointY="0.75" Height="1.5923063151041665" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShauniModel.Song" Width="1.875" PointX="5.5" PointY="0.5" Height="4.480205078125" IsExpanded="true" />
+        <AssociationConnector Association="ShauniModel.FK_AlbumGenre" ManuallyRouted="false">
+          <ConnectorPoint PointX="2" PointY="1.6439925130208333" />
+          <ConnectorPoint PointX="3" PointY="1.6439925130208333" />
+        </AssociationConnector>
+        <AssociationConnector Association="ShauniModel.FK_AlbumSong" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="2.0958968098958333" />
+          <ConnectorPoint PointX="5.5" PointY="2.0958968098958333" />
+        </AssociationConnector>
+        <AssociationConnector Association="ShauniModel.FK_ArtistSong" ManuallyRouted="false">
+          <ConnectorPoint PointX="10.25" PointY="3.2112939453125" />
+          <ConnectorPoint PointX="7.375" PointY="3.2112939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="ShauniModel.FK_SongGenre" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.15625" PointY="2.5379850260416665" />
+          <ConnectorPoint PointX="1.15625" PointY="3.9708968098958333" />
+          <ConnectorPoint PointX="3.1041666666666665" PointY="3.9708968098958328" />
+          <ConnectorPoint PointX="3.2708333333333335" PointY="3.9708968098958333" />
+          <ConnectorPoint PointX="5.5" PointY="3.9708968098958333" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ShauniModel.AudioStatistic" Width="1.5" PointX="10.25" PointY="5.75" Height="2.1725878906249996" />
+        <AssociationConnector Association="ShauniModel.AudioStatisticArtist">
+          <ConnectorPoint PointX="11" PointY="5.75" />
+          <ConnectorPoint PointX="11" PointY="4.672587890625" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ShauniModel.TimeLine" Width="1.5" PointX="10.25" PointY="8.375" Height="1.5956835937499996" />
+        <AssociationConnector Association="ShauniModel.TimeLineAudioStatistic">
+          <ConnectorPoint PointX="11" PointY="8.375" />
+          <ConnectorPoint PointX="11" PointY="7.922587890625" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ShauniModel.Format" Width="1.5" PointX="8.125" PointY="0.5" Height="2.172587890625" />
+        <AssociationConnector Association="ShauniModel.FormatSong">
+          <ConnectorPoint PointX="8.125" PointY="1.5862939453124998" />
+          <ConnectorPoint PointX="7.375" PointY="1.5862939453124998" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ShauniModel.Picture" Width="1.5" PointX="10.25" PointY="11" Height="2.3648893229166656" />
+        <EntityTypeShape EntityType="ShauniModel.Cover" Width="1.5" PointX="1.875" PointY="4.375" Height="1.9802864583333335" />
+        <AssociationConnector Association="ShauniModel.AlbumCover">
+          <ConnectorPoint PointX="3.1875" PointY="3.5667936197916665" />
+          <ConnectorPoint PointX="3.1875" PointY="4.375" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ShauniModel.Lyric" Width="1.5" PointX="8" PointY="3.75" Height="1.5956835937499996" />
+        <AssociationConnector Association="ShauniModel.SongLyric">
+          <ConnectorPoint PointX="7.375" PointY="4.3651025390625" />
+          <ConnectorPoint PointX="8" PointY="4.3651025390625" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ShauniModel.LastFm" Width="1.5" PointX="2.625" PointY="10.75" Height="1.9802864583333335" />
+        <EntityTypeShape EntityType="ShauniModel.Tag" Width="1.5" PointX="0.5" PointY="10.75" Height="1.5956835937499996" />
+        <AssociationConnector Association="ShauniModel.TagLastFm">
+          <ConnectorPoint PointX="2" PointY="11.547841796875" />
+          <ConnectorPoint PointX="2.625" PointY="11.547841796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="ShauniModel.LastFmSong" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.125" PointY="10.751152846153847" />
+          <ConnectorPoint PointX="4.5011528461538468" PointY="10.375" />
+          <ConnectorPoint PointX="6.117188125" PointY="10.375" />
+          <ConnectorPoint PointX="6.117188125" PointY="4.980205078125" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ShauniModel.TheEchoNest" Width="1.5" PointX="6" PointY="10.75" Height="2.5571907552083317" />
+        <AssociationConnector Association="ShauniModel.SongEchoNest">
+          <ConnectorPoint PointX="6.8085940625" PointY="4.980205078125" />
+          <ConnectorPoint PointX="6.8085940625" PointY="10.75" />
+        </AssociationConnector>
+        </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

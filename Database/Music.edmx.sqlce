@@ -1,0 +1,460 @@
+
+-- --------------------------------------------------
+-- Entity Designer DDL Script for SQL Server Compact Edition
+-- --------------------------------------------------
+-- Date Created: 11/02/2013 19:15:47
+-- Generated from EDMX file: F:\Studi\C#\Projects\Shauni\Shauni\Database\Music.edmx
+-- --------------------------------------------------
+
+
+-- --------------------------------------------------
+-- Dropping existing FOREIGN KEY constraints
+-- NOTE: if the constraint does not exist, an ignorable error will be reported.
+-- --------------------------------------------------
+
+    ALTER TABLE [Album] DROP CONSTRAINT [FK_AlbumGenre];
+GO
+    ALTER TABLE [Song] DROP CONSTRAINT [FK_AlbumSong];
+GO
+    ALTER TABLE [Song] DROP CONSTRAINT [FK_ArtistSong];
+GO
+    ALTER TABLE [Song] DROP CONSTRAINT [FK_SongGenre];
+GO
+    ALTER TABLE [AudioStatistic] DROP CONSTRAINT [FK_AudioStatisticArtist];
+GO
+    ALTER TABLE [AudioStatistic] DROP CONSTRAINT [FK_TimeLineAudioStatistic];
+GO
+    ALTER TABLE [Format] DROP CONSTRAINT [FK_FormatSong];
+GO
+    ALTER TABLE [Covers] DROP CONSTRAINT [FK_AlbumCover];
+GO
+    ALTER TABLE [Lyrics] DROP CONSTRAINT [FK_SongLyric];
+GO
+    ALTER TABLE [Tag] DROP CONSTRAINT [FK_TagLastFm];
+GO
+    ALTER TABLE [LastFm] DROP CONSTRAINT [FK_LastFmSong];
+GO
+    ALTER TABLE [TheEchoNest] DROP CONSTRAINT [FK_SongEchoNest];
+
+-- --------------------------------------------------
+-- Dropping existing tables
+-- NOTE: if the table does not exist, an ignorable error will be reported.
+-- --------------------------------------------------
+
+    DROP TABLE [Album];
+GO
+    DROP TABLE [Artist];
+GO
+    DROP TABLE [Genre];
+GO
+    DROP TABLE [Song];
+GO
+    DROP TABLE [AudioStatistic];
+GO
+    DROP TABLE [TimeLine];
+GO
+    DROP TABLE [Format];
+GO
+    DROP TABLE [Picture];
+GO
+    DROP TABLE [Covers];
+GO
+    DROP TABLE [Lyrics];
+GO
+    DROP TABLE [LastFm];
+GO
+    DROP TABLE [Tag];
+GO
+    DROP TABLE [TheEchoNest];
+GO
+
+-- --------------------------------------------------
+-- Creating all tables
+-- --------------------------------------------------
+
+-- Creating table 'Album'
+CREATE TABLE [Album] (
+    [ID] int  NOT NULL,
+    [Name] nvarchar(4000)  NOT NULL,
+    [GenreID] int  NOT NULL,
+    [Year] nvarchar(4000)  NULL,
+    [TrackNumber] smallint  NULL,
+    [PublicationDate] datetime  NULL,
+    [Notes] nvarchar(4000)  NULL
+);
+GO
+
+-- Creating table 'Artist'
+CREATE TABLE [Artist] (
+    [ID] int  NOT NULL,
+    [Name] nvarchar(4000)  NOT NULL,
+    [Image] varbinary(8000)  NULL,
+    [Biography] nvarchar(4000)  NULL
+);
+GO
+
+-- Creating table 'Genre'
+CREATE TABLE [Genre] (
+    [ID] int  NOT NULL,
+    [Name] nvarchar(4000)  NOT NULL
+);
+GO
+
+-- Creating table 'Song'
+CREATE TABLE [Song] (
+    [ID] int  NOT NULL,
+    [Name] nvarchar(4000)  NULL,
+    [Filename] nvarchar(4000)  NULL,
+    [Counter] int  NOT NULL,
+    [Duration] int  NULL,
+    [Stars] tinyint  NULL,
+    [Author] nvarchar(50)  NULL,
+    [GenreID] int  NOT NULL,
+    [ArtistID] int  NOT NULL,
+    [AlbumID] int  NOT NULL,
+    [Favourite] bit  NULL
+);
+GO
+
+-- Creating table 'AudioStatistic'
+CREATE TABLE [AudioStatistic] (
+    [ID] int  NOT NULL,
+    [Counter] int  NOT NULL,
+    [ArtistID] int  NOT NULL,
+    [TimeLineID] int  NOT NULL
+);
+GO
+
+-- Creating table 'TimeLine'
+CREATE TABLE [TimeLine] (
+    [ID] int  NOT NULL,
+    [Date] datetime  NOT NULL
+);
+GO
+
+-- Creating table 'Format'
+CREATE TABLE [Format] (
+    [ID] int  NOT NULL,
+    [Size] int  NOT NULL,
+    [SamplingRate] int  NOT NULL,
+    [Name] nvarchar(4000)  NOT NULL,
+    [BitRate] int  NOT NULL,
+    [Song_ID] int  NOT NULL
+);
+GO
+
+-- Creating table 'Picture'
+CREATE TABLE [Picture] (
+    [ID] int  NOT NULL,
+    [Counter] int  NOT NULL,
+    [Favourite] bit  NULL,
+    [Stars] tinyint  NULL,
+    [Name] nvarchar(4000)  NOT NULL,
+    [Author] nvarchar(50)  NULL,
+    [Filename] nvarchar(4000)  NOT NULL
+);
+GO
+
+-- Creating table 'Covers'
+CREATE TABLE [Covers] (
+    [ID] int  NOT NULL,
+    [Front] varbinary(8000)  NULL,
+    [Back] varbinary(8000)  NULL,
+    [AlbumID] int  NOT NULL
+);
+GO
+
+-- Creating table 'Lyrics'
+CREATE TABLE [Lyrics] (
+    [ID] int  NOT NULL,
+    [Text] nvarchar(4000)  NOT NULL,
+    [Song_ID] int  NOT NULL
+);
+GO
+
+-- Creating table 'LastFm'
+CREATE TABLE [LastFm] (
+    [ID] int  NOT NULL,
+    [Playcount] int  NULL,
+    [Listeners] int  NULL,
+    [Song_ID] int  NOT NULL
+);
+GO
+
+-- Creating table 'Tag'
+CREATE TABLE [Tag] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [LastFmID] int  NOT NULL
+);
+GO
+
+-- Creating table 'TheEchoNest'
+CREATE TABLE [TheEchoNest] (
+    [ID] int  NOT NULL,
+    [Tempo] float  NULL,
+    [Energy] float  NULL,
+    [Danceability] float  NULL,
+    [Key] int  NOT NULL,
+    [Mode] int  NOT NULL,
+    [Loudness] float  NULL,
+    [Song_ID] int  NOT NULL
+);
+GO
+
+-- --------------------------------------------------
+-- Creating all PRIMARY KEY constraints
+-- --------------------------------------------------
+
+-- Creating primary key on [ID] in table 'Album'
+ALTER TABLE [Album]
+ADD CONSTRAINT [PK_Album]
+    PRIMARY KEY ([ID] );
+GO
+
+-- Creating primary key on [ID] in table 'Artist'
+ALTER TABLE [Artist]
+ADD CONSTRAINT [PK_Artist]
+    PRIMARY KEY ([ID] );
+GO
+
+-- Creating primary key on [ID] in table 'Genre'
+ALTER TABLE [Genre]
+ADD CONSTRAINT [PK_Genre]
+    PRIMARY KEY ([ID] );
+GO
+
+-- Creating primary key on [ID] in table 'Song'
+ALTER TABLE [Song]
+ADD CONSTRAINT [PK_Song]
+    PRIMARY KEY ([ID] );
+GO
+
+-- Creating primary key on [ID] in table 'AudioStatistic'
+ALTER TABLE [AudioStatistic]
+ADD CONSTRAINT [PK_AudioStatistic]
+    PRIMARY KEY ([ID] );
+GO
+
+-- Creating primary key on [ID] in table 'TimeLine'
+ALTER TABLE [TimeLine]
+ADD CONSTRAINT [PK_TimeLine]
+    PRIMARY KEY ([ID] );
+GO
+
+-- Creating primary key on [ID] in table 'Format'
+ALTER TABLE [Format]
+ADD CONSTRAINT [PK_Format]
+    PRIMARY KEY ([ID] );
+GO
+
+-- Creating primary key on [ID] in table 'Picture'
+ALTER TABLE [Picture]
+ADD CONSTRAINT [PK_Picture]
+    PRIMARY KEY ([ID] );
+GO
+
+-- Creating primary key on [ID] in table 'Covers'
+ALTER TABLE [Covers]
+ADD CONSTRAINT [PK_Covers]
+    PRIMARY KEY ([ID] );
+GO
+
+-- Creating primary key on [ID] in table 'Lyrics'
+ALTER TABLE [Lyrics]
+ADD CONSTRAINT [PK_Lyrics]
+    PRIMARY KEY ([ID] );
+GO
+
+-- Creating primary key on [ID] in table 'LastFm'
+ALTER TABLE [LastFm]
+ADD CONSTRAINT [PK_LastFm]
+    PRIMARY KEY ([ID] );
+GO
+
+-- Creating primary key on [ID] in table 'Tag'
+ALTER TABLE [Tag]
+ADD CONSTRAINT [PK_Tag]
+    PRIMARY KEY ([ID] );
+GO
+
+-- Creating primary key on [ID] in table 'TheEchoNest'
+ALTER TABLE [TheEchoNest]
+ADD CONSTRAINT [PK_TheEchoNest]
+    PRIMARY KEY ([ID] );
+GO
+
+-- --------------------------------------------------
+-- Creating all FOREIGN KEY constraints
+-- --------------------------------------------------
+
+-- Creating foreign key on [GenreID] in table 'Album'
+ALTER TABLE [Album]
+ADD CONSTRAINT [FK_AlbumGenre]
+    FOREIGN KEY ([GenreID])
+    REFERENCES [Genre]
+        ([ID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_AlbumGenre'
+CREATE INDEX [IX_FK_AlbumGenre]
+ON [Album]
+    ([GenreID]);
+GO
+
+-- Creating foreign key on [AlbumID] in table 'Song'
+ALTER TABLE [Song]
+ADD CONSTRAINT [FK_AlbumSong]
+    FOREIGN KEY ([AlbumID])
+    REFERENCES [Album]
+        ([ID])
+    ON DELETE CASCADE ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_AlbumSong'
+CREATE INDEX [IX_FK_AlbumSong]
+ON [Song]
+    ([AlbumID]);
+GO
+
+-- Creating foreign key on [ArtistID] in table 'Song'
+ALTER TABLE [Song]
+ADD CONSTRAINT [FK_ArtistSong]
+    FOREIGN KEY ([ArtistID])
+    REFERENCES [Artist]
+        ([ID])
+    ON DELETE CASCADE ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_ArtistSong'
+CREATE INDEX [IX_FK_ArtistSong]
+ON [Song]
+    ([ArtistID]);
+GO
+
+-- Creating foreign key on [GenreID] in table 'Song'
+ALTER TABLE [Song]
+ADD CONSTRAINT [FK_SongGenre]
+    FOREIGN KEY ([GenreID])
+    REFERENCES [Genre]
+        ([ID])
+    ON DELETE CASCADE ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_SongGenre'
+CREATE INDEX [IX_FK_SongGenre]
+ON [Song]
+    ([GenreID]);
+GO
+
+-- Creating foreign key on [ArtistID] in table 'AudioStatistic'
+ALTER TABLE [AudioStatistic]
+ADD CONSTRAINT [FK_AudioStatisticArtist]
+    FOREIGN KEY ([ArtistID])
+    REFERENCES [Artist]
+        ([ID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_AudioStatisticArtist'
+CREATE INDEX [IX_FK_AudioStatisticArtist]
+ON [AudioStatistic]
+    ([ArtistID]);
+GO
+
+-- Creating foreign key on [TimeLineID] in table 'AudioStatistic'
+ALTER TABLE [AudioStatistic]
+ADD CONSTRAINT [FK_TimeLineAudioStatistic]
+    FOREIGN KEY ([TimeLineID])
+    REFERENCES [TimeLine]
+        ([ID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_TimeLineAudioStatistic'
+CREATE INDEX [IX_FK_TimeLineAudioStatistic]
+ON [AudioStatistic]
+    ([TimeLineID]);
+GO
+
+-- Creating foreign key on [Song_ID] in table 'Format'
+ALTER TABLE [Format]
+ADD CONSTRAINT [FK_FormatSong]
+    FOREIGN KEY ([Song_ID])
+    REFERENCES [Song]
+        ([ID])
+    ON DELETE CASCADE ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_FormatSong'
+CREATE INDEX [IX_FK_FormatSong]
+ON [Format]
+    ([Song_ID]);
+GO
+
+-- Creating foreign key on [AlbumID] in table 'Covers'
+ALTER TABLE [Covers]
+ADD CONSTRAINT [FK_AlbumCover]
+    FOREIGN KEY ([AlbumID])
+    REFERENCES [Album]
+        ([ID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_AlbumCover'
+CREATE INDEX [IX_FK_AlbumCover]
+ON [Covers]
+    ([AlbumID]);
+GO
+
+-- Creating foreign key on [Song_ID] in table 'Lyrics'
+ALTER TABLE [Lyrics]
+ADD CONSTRAINT [FK_SongLyric]
+    FOREIGN KEY ([Song_ID])
+    REFERENCES [Song]
+        ([ID])
+    ON DELETE CASCADE ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_SongLyric'
+CREATE INDEX [IX_FK_SongLyric]
+ON [Lyrics]
+    ([Song_ID]);
+GO
+
+-- Creating foreign key on [LastFmID] in table 'Tag'
+ALTER TABLE [Tag]
+ADD CONSTRAINT [FK_TagLastFm]
+    FOREIGN KEY ([LastFmID])
+    REFERENCES [LastFm]
+        ([ID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_TagLastFm'
+CREATE INDEX [IX_FK_TagLastFm]
+ON [Tag]
+    ([LastFmID]);
+GO
+
+-- Creating foreign key on [Song_ID] in table 'LastFm'
+ALTER TABLE [LastFm]
+ADD CONSTRAINT [FK_LastFmSong]
+    FOREIGN KEY ([Song_ID])
+    REFERENCES [Song]
+        ([ID])
+    ON DELETE CASCADE ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_LastFmSong'
+CREATE INDEX [IX_FK_LastFmSong]
+ON [LastFm]
+    ([Song_ID]);
+GO
+
+-- Creating foreign key on [Song_ID] in table 'TheEchoNest'
+ALTER TABLE [TheEchoNest]
+ADD CONSTRAINT [FK_SongEchoNest]
+    FOREIGN KEY ([Song_ID])
+    REFERENCES [Song]
+        ([ID])
+    ON DELETE CASCADE ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_SongEchoNest'
+CREATE INDEX [IX_FK_SongEchoNest]
+ON [TheEchoNest]
+    ([Song_ID]);
+GO
+
+-- --------------------------------------------------
+-- Script has ended
+-- --------------------------------------------------

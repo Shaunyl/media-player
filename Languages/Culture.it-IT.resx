@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnApply.Text" xml:space="preserve">
+    <value>Applica</value>
+    <comment>ConfigurationForm</comment>
+  </data>
+  <data name="btnBrowse.Text" xml:space="preserve">
+    <value>Cerca</value>
+    <comment>ToolsForm</comment>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Arresta</value>
+    <comment>ToolsForm</comment>
+  </data>
+  <data name="btnClear.Text" xml:space="preserve">
+    <value>Pulisci</value>
+    <comment>ToolsForm</comment>
+  </data>
+  <data name="btnPause.Text" xml:space="preserve">
+    <value>Pausa</value>
+    <comment>ToolsForm</comment>
+  </data>
+  <data name="btnResume.Text" xml:space="preserve">
+    <value>Riprendi</value>
+    <comment>ToolsForm</comment>
+  </data>
+  <data name="btnSearch4Updates" xml:space="preserve">
+    <value>Cerca aggiornamenti</value>
+    <comment>AboutForm</comment>
+  </data>
+  <data name="btnUpdate.Text" xml:space="preserve">
+    <value>Aggiorna</value>
+    <comment>ConfigurationForm</comment>
+  </data>
+  <data name="gBGeneral.Text" xml:space="preserve">
+    <value>Generali</value>
+    <comment>ConfigurationForm</comment>
+  </data>
+  <data name="gbLogger.Text" xml:space="preserve">
+    <value>Logger</value>
+    <comment>ConfigurationForm</comment>
+  </data>
+  <data name="gBPlugins.Text" xml:space="preserve">
+    <value>Plugins</value>
+    <comment>ConfigurationForm</comment>
+  </data>
+  <data name="gBTime2Count.Text" xml:space="preserve">
+    <value>Scrobbling</value>
+    <comment>ConfigurationForm</comment>
+  </data>
+  <data name="lblEnableLogger.Text" xml:space="preserve">
+    <value>Attiva:</value>
+    <comment>ConfigurationForm</comment>
+  </data>
+  <data name="lblLoadPrevPlaylist.Text" xml:space="preserve">
+    <value>Carica l'ultima playlist:</value>
+    <comment>ConfigurationForm</comment>
+  </data>
+  <data name="lblPlayAtStartup.Text" xml:space="preserve">
+    <value>Riproduci all'avvio:</value>
+    <comment>ConfigurationForm</comment>
+  </data>
+  <data name="lblAllowInfoLastfm.Text" xml:space="preserve">
+    <value>Permetti di scaricare info Last.fm:</value>
+    <comment>ConfigurationForm</comment>
+  </data>
+  <data name="lblCurrentIcon.Text" xml:space="preserve">
+    <value>Tema corrente:</value>
+    <comment>ToolsForm</comment>
+  </data>
+  <data name="lblEnablePlugins.Text" xml:space="preserve">
+    <value>Attiva:</value>
+    <comment>ConfigurationForm</comment>
+  </data>
+  <data name="lblEnableScrobbling.Text" xml:space="preserve">
+    <value>Attiva:</value>
+    <comment>ConfigurationForm</comment>
+  </data>
+  <data name="lblLastUpdate" xml:space="preserve">
+    <value>Ultimo aggiornamento:</value>
+    <comment>AboutForm</comment>
+  </data>
+  <data name="lblLastVersion" xml:space="preserve">
+    <value>Versione corrente:</value>
+    <comment>AboutForm</comment>
+  </data>
+  <data name="lblNewVersion" xml:space="preserve">
+    <value>Nessuna nuova versione disponibile..</value>
+    <comment>AboutForm</comment>
+  </data>
+  <data name="lblPrgsBarVis.Text" xml:space="preserve">
+    <value>Barra di avanzamento visibile:</value>
+    <comment>ConfigurationForm</comment>
+  </data>
+  <data name="lblTime2.Text" xml:space="preserve">
+    <value>Intervallo (%):</value>
+    <comment>ConfigurationForm</comment>
+  </data>
+  <data name="lblVersion" xml:space="preserve">
+    <value>Versione</value>
+    <comment>AboutForm</comment>
+  </data>
+  <data name="formLang" xml:space="preserve">
+    <value>Seleziona una nuova lingua..</value>
+    <comment>LanguagesForm</comment>
+  </data>
+  <data name="*AuthorOfLanguage" xml:space="preserve">
+    <value>Filippo Testino</value>
+  </data>
+  <data name="*VersionOfLanguage" xml:space="preserve">
+    <value>1.0.0</value>
+  </data>
+  <data name="lblEnableAutoLangDetection.Text" xml:space="preserve">
+    <value>Abilita rilevamento automatico della lingua</value>
+    <comment>ConfigurationForm</comment>
+  </data>
+  <data name="lblListOfThemes.Text" xml:space="preserve">
+    <value>Temi disponibili:</value>
+    <comment>ToolsForm</comment>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="flag" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Italy11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ToolTipLangNotesText" xml:space="preserve">
+    <value>Richiede un riavvio dell'applicazione per il corretto funzionamento.</value>
+    <comment>ConfigurationForm</comment>
+  </data>
+  <data name="lblNotifyLangChanging.Text" xml:space="preserve">
+    <value>E' necessario riavviare Shauni per applicare la lingua desiderata.</value>
+    <comment>LanguagesForm</comment>
+  </data>
+  <data name="AutoPlaylistTlStrpMnItm.Text" xml:space="preserve">
+    <value>Crea una playlist automatica</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="configurationToolStripMenuItem.Text" xml:space="preserve">
+    <value>Impostazioni</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Cancella</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="fastSearchToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ricerca veloce...</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="importToolStripMenuItem.Text" xml:space="preserve">
+    <value>Importa</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="lblAlbumTag.Text" xml:space="preserve">
+    <value>Album</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="lblArtistTag.Text" xml:space="preserve">
+    <value>Artista</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="lblAudioFormat.Text" xml:space="preserve">
+    <value>Formato</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="lblBitRate.Text" xml:space="preserve">
+    <value>Velocità di trasmissione</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="lblCounter.Text" xml:space="preserve">
+    <value>N. ascolti</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="lblDuration.Text" xml:space="preserve">
+    <value>Durata</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="lblFilename.Text" xml:space="preserve">
+    <value>Percorso</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="lblFileSize.Text" xml:space="preserve">
+    <value>Dimensioni</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="lblGenreTag.Text" xml:space="preserve">
+    <value>Genere</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="lblIsFavourite.Text" xml:space="preserve">
+    <value>Favorito</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="lblRating.Text" xml:space="preserve">
+    <value>Classificazione</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="lblSamplingRate.Text" xml:space="preserve">
+    <value>Frequenza di campionamento</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="lblTitleTag.Text" xml:space="preserve">
+    <value>Titolo</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="lblTrackNTag.Text" xml:space="preserve">
+    <value>N. Track</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="lblYearTag.Text" xml:space="preserve">
+    <value>Anno</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="nowPlaying" xml:space="preserve">
+    <value>Ora in ascolto</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="playlistCreationText" xml:space="preserve">
+    <value>Crea o modifica la tua playlist</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="renameToolStripMenuItem.Text" xml:space="preserve">
+    <value>Rinomina</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="saveBtn.Text" xml:space="preserve">
+    <value>Salva</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="saveToFileToolStripMenuItem.Text" xml:space="preserve">
+    <value>Salva playlist</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="searchToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ricerca avanzata</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="selectLanguageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Seleziona lingua</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="SimplePlaylistTlStrpMnItm.Text" xml:space="preserve">
+    <value>Crea una playlist</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="toolsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Strumenti</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="tsBtnAbout.Text" xml:space="preserve">
+    <value>Informazioni su Shauni</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="tsBtnChart.Text" xml:space="preserve">
+    <value>Classifiche</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="tsBtnEsc.Text" xml:space="preserve">
+    <value>Esci</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="tsBtnPlaylist.Text" xml:space="preserve">
+    <value>Gestione Playlist</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="tsBtnTagEditor.Text" xml:space="preserve">
+    <value>Tag Editor</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="tssBtnDataSetting.Text" xml:space="preserve">
+    <value>Dati e Impostazioni</value>
+    <comment>MainForm</comment>
+  </data>
+  <data name="writePlaylistName" xml:space="preserve">
+    <value>Scegli un nome per la playlist</value>
+    <comment>MainForm</comment>
+  </data>
+</root>

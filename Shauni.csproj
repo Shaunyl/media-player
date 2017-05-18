@@ -1,0 +1,622 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4F4F6D2A-0DA9-46C5-936F-F64215AA80F2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Shauni</RootNamespace>
+    <AssemblyName>Shauni</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+    <PublishUrl>C:\Users\Filippo\Deployment\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Shauni.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Shauni.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CustomScrollBar">
+      <HintPath>C:\Users\Filippo\Desktop\CustomScrollBar_demo\CustomScrollBar\bin\Release\CustomScrollBar.dll</HintPath>
+    </Reference>
+    <Reference Include="EchoNest-Sharp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\EchoNest-Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Graph">
+      <HintPath>..\..\Definitive\Graph\Graph\bin\Release\Graph.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>C:\Users\Filippo\Desktop\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Maths">
+      <HintPath>..\..\Definitive\Math\bin\Release\Maths.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Schema, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.Data.Schema.UnitTesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.DirectX.AudioVideoPlayback, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\Microsoft.DirectX.AudioVideoPlayback.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="MRG.Controls.UI, Version=1.0.4830.4818, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Filippo\Desktop\MRGLoadingCirclesrc\LoadingCircle\MRG.Controls.UI\bin\Release\MRG.Controls.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:\Users\Filippo\Desktop\echonest-sharp-master\echonest-sharp-master\src\EchoNest-Sharp\bin\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Filippo\Desktop\echonest-sharp-master\echonest-sharp-master\src\EchoNest-Sharp\bin\Debug\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Filippo\Desktop\echonest-sharp-master\echonest-sharp-master\src\EchoNest-Sharp\bin\Debug\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Tagger, Version=1.0.3.12, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Definitive\Tagger\bin\Release\Tagger.dll</HintPath>
+    </Reference>
+    <Reference Include="Updater">
+      <HintPath>..\Updater\bin\Release\Updater.exe</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cache.cs" />
+    <Compile Include="Forms\FastSearchDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FastSearchDialog.Designer.cs">
+      <DependentUpon>FastSearchDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NewConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewConfig.Designer.cs">
+      <DependentUpon>NewConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Graphics\ColorTable.cs" />
+    <Compile Include="Learning\BackPropagation.cs" />
+    <Compile Include="Services\LastFmManager.cs" />
+    <Compile Include="Database\BusinessLogicLayer.cs" />
+    <Compile Include="Database\ChartInteraction.cs" />
+    <Compile Include="Database\DatabaseSession.cs" />
+    <Compile Include="Services\EchoNestManager.cs" />
+    <Compile Include="Database\Id3Interaction.cs" />
+    <Compile Include="Database\IMedia.cs" />
+    <Compile Include="Learning\ILearning.cs" />
+    <Compile Include="Learning\TrainingSetRecord.cs" />
+    <Compile Include="LyricsDownloader.cs" />
+    <Compile Include="Database\Music.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Music.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ObjectSetExtensions.cs" />
+    <Compile Include="Database\SharedData.cs" />
+    <Compile Include="Learning\DecisionTree.cs" />
+    <Compile Include="DataLoader.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Forms\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AutoPlaylistEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AutoPlaylistEditor.Designer.cs">
+      <DependentUpon>AutoPlaylistEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ConfigurationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ConfigurationForm.Designer.cs">
+      <DependentUpon>ConfigurationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LanguagesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LanguagesForm.Designer.cs">
+      <DependentUpon>LanguagesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SearchForm.Designer.cs">
+      <DependentUpon>SearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ToolsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ToolsForm.Designer.cs">
+      <DependentUpon>ToolsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Icons\IconPack.cs" />
+    <Compile Include="Icons\IconPackManager.cs" />
+    <Compile Include="KeyBoardHook.cs" />
+    <Compile Include="Learning\NaiveBayes.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="Paths.cs" />
+    <Compile Include="Playlist\AutomaticPlaylist.cs" />
+    <Compile Include="Playlist\Filter.cs" />
+    <Compile Include="Playlist\FormatProviders\M3uProvider.cs" />
+    <Compile Include="Playlist\FormatProviders\TxtProvider.cs" />
+    <Compile Include="Playlist\FormatProviders\WplProvider.cs" />
+    <Compile Include="Playlist\ICountable.cs" />
+    <Compile Include="Playlist\IFilterable.cs" />
+    <Compile Include="Playlist\IFormatProvider.cs" />
+    <Compile Include="Playlist\IPlaylist.cs" />
+    <Compile Include="Playlist\SimplePlaylist.cs" />
+    <Compile Include="PluginManager.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterManager.cs" />
+    <Compile Include="Learning\ThreadWorker.cs" />
+    <Compile Include="Graphics\ToolStripRenderer.cs" />
+    <Compile Include="UserControls\AutoPlaylistPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AutoPlaylistPanel.Designer.cs">
+      <DependentUpon>AutoPlaylistPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AutoPlaylistTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\ChangeListPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ChangeListPanel.Designer.cs">
+      <DependentUpon>ChangeListPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ChartTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ChartTab.Designer.cs">
+      <DependentUpon>ChartTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FastSearchControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\FastSearchControl.Designer.cs">
+      <DependentUpon>FastSearchControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AdvisePopup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AdvisePopup.Designer.cs">
+      <DependentUpon>AdvisePopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ListBoxes\IconPackListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\ListBoxes\ImageListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\ListBoxes\AudioListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\ListBoxes\MediaListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\ListBoxes\VideoListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\LyricsTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\LyricsTab.Designer.cs">
+      <DependentUpon>LyricsTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MediaInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MediaInfo.Designer.cs">
+      <DependentUpon>MediaInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ListBoxes\ShauniListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\MediaPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\MediaPanel.Designer.cs">
+      <DependentUpon>MediaPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Paragraphe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Paragraphe.Designer.cs">
+      <DependentUpon>Paragraphe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PlayerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\PlayerControl.Designer.cs">
+      <DependentUpon>PlayerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PlaylistTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\PlaylistTab.Designer.cs">
+      <DependentUpon>PlaylistTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ProgressBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ProgressBar.Designer.cs">
+      <DependentUpon>ProgressBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RatingBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\ShauniLoadingCircle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\ShauniLoadingCircle.Designer.cs">
+      <DependentUpon>ShauniLoadingCircle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TabBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\TaggerTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TaggerTab.Designer.cs">
+      <DependentUpon>TaggerTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TileButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\Track.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Track.Designer.cs">
+      <DependentUpon>Track.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TreeNodeComboBox.cs" />
+    <Compile Include="UserControls\TreeNodeTextBox.cs" />
+    <EmbeddedResource Include="Forms\AboutForm.en.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AutoPlaylistEditor.resx">
+      <DependentUpon>AutoPlaylistEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ConfigurationForm.en.resx">
+      <DependentUpon>ConfigurationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ConfigurationForm.resx">
+      <DependentUpon>ConfigurationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FastSearchDialog.resx">
+      <DependentUpon>FastSearchDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LanguagesForm.en.resx">
+      <DependentUpon>LanguagesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LanguagesForm.resx">
+      <DependentUpon>LanguagesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.en.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewConfig.resx">
+      <DependentUpon>NewConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SearchForm.resx">
+      <DependentUpon>SearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ToolsForm.resx">
+      <DependentUpon>ToolsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Culture.de-De.resx" />
+    <EmbeddedResource Include="Languages\Culture.it-IT.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\AutoPlaylistPanel.resx">
+      <DependentUpon>AutoPlaylistPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ChangeListPanel.resx">
+      <DependentUpon>ChangeListPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ChartTab.resx">
+      <DependentUpon>ChartTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\FastSearchControl.resx">
+      <DependentUpon>FastSearchControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\AdvisePopup.resx">
+      <DependentUpon>AdvisePopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\LyricsTab.resx">
+      <DependentUpon>LyricsTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MediaInfo.resx">
+      <DependentUpon>MediaInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Paragraphe.resx">
+      <DependentUpon>Paragraphe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\PlayerControl.resx">
+      <DependentUpon>PlayerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\PlaylistTab.resx">
+      <DependentUpon>PlaylistTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TaggerTab.resx">
+      <DependentUpon>TaggerTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Track.resx">
+      <DependentUpon>Track.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Database\Music.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Music.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.Config" />
+    <None Include="Database\Music.edmx.sqlce" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\DataSources\Shauni.Database.ShauniDatabase.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Player.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonStart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BordRight.bmp" />
+    <None Include="Resources\BordLeft.bmp" />
+    <None Include="Resources\Esc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.3.5">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 3.5 SP2</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playlist.png" />
+    <None Include="Resources\Lyric.png" />
+    <None Include="Resources\Settings.png" />
+    <None Include="Resources\Home16.png" />
+    <None Include="Resources\Attention.png" />
+    <None Include="bin\Debug\en\Shauni.resources.dll" />
+    <Content Include="Documentation\Change Log.txt" />
+    <None Include="Resources\Arrow2.png" />
+    <None Include="Resources\Arrow2b.PNG" />
+    <Content Include="Resources\AudioFormat.png" />
+    <None Include="Resources\StarFull.png" />
+    <None Include="Resources\Database.png" />
+    <None Include="Resources\email.png" />
+    <None Include="Resources\MailArr.png" />
+    <None Include="Resources\MyMusic.png" />
+    <None Include="Resources\Networkoff.png" />
+    <None Include="Resources\Statistics.png" />
+    <None Include="Resources\Download.png" />
+    <None Include="Resources\heart.png" />
+    <None Include="Resources\whiteheart.png" />
+    <None Include="Resources\Starhalffull.png" />
+    <None Include="Resources\FavMedia.png" />
+    <None Include="Resources\save.png" />
+    <None Include="Resources\SimplePl.png" />
+    <None Include="Resources\ButtonStop.png" />
+    <None Include="Resources\ButtonRandom.PNG" />
+    <None Include="Resources\ButtonRepeat.PNG" />
+    <None Include="Resources\ButtonBrowse.png" />
+    <None Include="Resources\ButtonLyric.png" />
+    <None Include="Resources\Filter.png" />
+    <None Include="Resources\AutoPlaylist.png" />
+    <None Include="Resources\dtag.png" />
+    <None Include="Resources\ConfigurationSettings.png" />
+    <None Include="Resources\Configuration.png" />
+    <None Include="Resources\Folder.png" />
+    <None Include="Resources\PauseLog.png" />
+    <None Include="Resources\ResumeLog.png" />
+    <None Include="Resources\CancelLog.png" />
+    <None Include="Resources\StarEmpty2.png" />
+    <None Include="Resources\trackPosBackg.png" />
+    <None Include="Resources\trackCursor.png" />
+    <None Include="Resources\Search.png" />
+    <None Include="Resources\Shauni.PNG" />
+    <None Include="Resources\isPlaying.png" />
+    <None Include="Resources\Ok.png" />
+    <None Include="Resources\colors.png" />
+    <None Include="Resources\Logger.png" />
+    <None Include="Resources\plugin.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\flag.png" />
+    <None Include="Resources\UnitedKingdom.png" />
+    <None Include="Resources\UnitedKingdom1.png" />
+    <None Include="Resources\UnitedKingdom11.png" />
+    <None Include="Resources\ButtonPause.png" />
+    <None Include="Resources\ButtonScroll.png" />
+    <None Include="Resources\ButtonScrollRight.png" />
+    <None Include="Resources\PanelResizable.png" />
+    <None Include="Resources\Picture.png" />
+    <None Include="Resources\Germany.png" />
+    <None Include="Resources\Italy11.png" />
+    <None Include="Resources\trkVolume.bmp" />
+    <None Include="Resources\ShauniLogo32.png" />
+    <None Include="Resources\share2.png" />
+    <None Include="Resources\Learning.png" />
+    <None Include="Resources\tools.png" />
+    <None Include="Resources\sound_grey.png" />
+    <None Include="Resources\Close2.png" />
+    <None Include="Resources\share.png" />
+    <None Include="Resources\share21.png" />
+    <None Include="Resources\SearchExit.png" />
+    <None Include="Resources\index.png" />
+    <None Include="Resources\Plugins32.png" />
+    <None Include="Resources\Settings48.png" />
+    <None Include="Resources\OxleyLetter2.png" />
+    <None Include="Resources\gxcy1zhp.bmp" />
+    <None Include="Resources\Network.png" />
+    <None Include="Resources\Customize.png" />
+    <None Include="Resources\blues.png" />
+    <None Include="Resources\StarFull2.png" />
+    <None Include="Resources\StarFull3.png" />
+    <None Include="Resources\StarEmpty3.png" />
+    <None Include="Resources\sshare.png" />
+    <None Include="Resources\share32.png" />
+    <None Include="Resources\share128.png" />
+    <None Include="Resources\ShauniLogo.png" />
+    <Content Include="Shauni.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Plugin\Plugin.csproj">
+      <Project>{4838C1A3-4053-4CD0-BBEE-4FEA83672AB4}</Project>
+      <Name>Plugin</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties BuildVersion_AssemblyInfoFilename="" BuildVersion_UpdateAssemblyVersion="False" BuildVersion_UpdateFileVersion="False" BuildVersion_StartDate="2012/10/11" BuildVersion_BuildVersioningStyle="None.None.None.None" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

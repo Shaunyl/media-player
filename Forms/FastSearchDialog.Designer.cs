@@ -1,0 +1,169 @@
+﻿namespace Shauni.Forms
+{
+    partial class FastSearchDialog
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FastSearchDialog));
+            this.toolStripSearch = new System.Windows.Forms.ToolStrip();
+            this.btnTitle = new System.Windows.Forms.ToolStripButton();
+            this.btnFav = new System.Windows.Forms.ToolStripButton();
+            this.btnStars = new System.Windows.Forms.ToolStripButton();
+            this.lblSearchPattern = new System.Windows.Forms.Label();
+            this.btnArtist = new System.Windows.Forms.ToolStripButton();
+            this.fastSearchControl1 = new Shauni.UserControls.FastSearchControl();
+            this.toolStripSearch.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // toolStripSearch
+            // 
+            this.toolStripSearch.BackColor = System.Drawing.Color.Gainsboro;
+            this.toolStripSearch.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripSearch.GripMargin = new System.Windows.Forms.Padding(11);
+            this.toolStripSearch.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStripSearch.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.toolStripSearch.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnTitle,
+            this.btnFav,
+            this.btnStars,
+            this.btnArtist});
+            this.toolStripSearch.Location = new System.Drawing.Point(0, 0);
+            this.toolStripSearch.Name = "toolStripSearch";
+            this.toolStripSearch.Padding = new System.Windows.Forms.Padding(8, 0, 1, 0);
+            this.toolStripSearch.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.toolStripSearch.ShowItemToolTips = false;
+            this.toolStripSearch.Size = new System.Drawing.Size(389, 27);
+            this.toolStripSearch.Stretch = true;
+            this.toolStripSearch.TabIndex = 1;
+            this.toolStripSearch.Text = "toolStrip1";
+            // 
+            // btnTitle
+            // 
+            this.btnTitle.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnTitle.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnTitle.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnTitle.Name = "btnTitle";
+            this.btnTitle.Size = new System.Drawing.Size(42, 24);
+            this.btnTitle.Text = "Title";
+            this.btnTitle.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            // 
+            // btnFav
+            // 
+            this.btnFav.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnFav.Image = ((System.Drawing.Image)(resources.GetObject("btnFav.Image")));
+            this.btnFav.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnFav.Name = "btnFav";
+            this.btnFav.Size = new System.Drawing.Size(35, 24);
+            this.btnFav.Text = "Fav";
+            // 
+            // btnStars
+            // 
+            this.btnStars.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnStars.Image = ((System.Drawing.Image)(resources.GetObject("btnStars.Image")));
+            this.btnStars.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnStars.Name = "btnStars";
+            this.btnStars.Size = new System.Drawing.Size(45, 24);
+            this.btnStars.Text = "Stars";
+            // 
+            // btnArtist
+            // 
+            this.btnArtist.Checked = true;
+            this.btnArtist.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.btnArtist.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnArtist.Image = ((System.Drawing.Image)(resources.GetObject("btnArtist.Image")));
+            this.btnArtist.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnArtist.Name = "btnArtist";
+            this.btnArtist.Size = new System.Drawing.Size(48, 24);
+            this.btnArtist.Text = "Artist";
+            // 
+            // lblSearchPattern
+            // 
+            this.lblSearchPattern.AutoSize = true;
+            this.lblSearchPattern.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchPattern.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.lblSearchPattern.Location = new System.Drawing.Point(14, 39);
+            this.lblSearchPattern.Name = "lblSearchPattern";
+            this.lblSearchPattern.Size = new System.Drawing.Size(34, 13);
+            this.lblSearchPattern.TabIndex = 2;
+            this.lblSearchPattern.Text = "Artist";
+            // 
+            // fastSearchControl1
+            // 
+            this.fastSearchControl1.BackColor = System.Drawing.Color.White;
+            this.fastSearchControl1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fastSearchControl1.Location = new System.Drawing.Point(14, 59);
+            this.fastSearchControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.fastSearchControl1.Name = "fastSearchControl1";
+            this.fastSearchControl1.Size = new System.Drawing.Size(363, 29);
+            this.fastSearchControl1.TabIndex = 0;
+            // 
+            // btnArtist
+            // 
+            this.btnArtist.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnArtist.Image = ((System.Drawing.Image)(resources.GetObject("btnArtist.Image")));
+            this.btnArtist.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnArtist.Name = "btnArtist";
+            this.btnArtist.Size = new System.Drawing.Size(48, 24);
+            this.btnArtist.Text = "Artist";
+            // 
+            // FastSearchDialog
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(389, 106);
+            this.Controls.Add(this.lblSearchPattern);
+            this.Controls.Add(this.toolStripSearch);
+            this.Controls.Add(this.fastSearchControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "FastSearchDialog";
+            this.Opacity = 0.95D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Search";
+            this.TopMost = true;
+            this.toolStripSearch.ResumeLayout(false);
+            this.toolStripSearch.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private UserControls.FastSearchControl fastSearchControl1;
+        private System.Windows.Forms.ToolStrip toolStripSearch;
+        private System.Windows.Forms.ToolStripButton btnTitle;
+        private System.Windows.Forms.ToolStripButton btnFav;
+        private System.Windows.Forms.ToolStripButton btnStars;
+        private System.Windows.Forms.Label lblSearchPattern;
+        private System.Windows.Forms.ToolStripButton btnArtist;
+
+    }
+}
